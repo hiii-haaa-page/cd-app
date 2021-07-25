@@ -1,12 +1,19 @@
 import { useDispatch } from 'react-redux';
-import { push } from 'connected-react-router';
+import { signIn } from '../redux/users/operations';
 
 const Login = () => {
   const dispatch = useDispatch();
+
   return (
     <>
-      <h2>こんに日は</h2>
-      <button onClick={() => dispatch(push('/'))}>home</button>
+      <h2>ログイン</h2>
+      <button
+        onClick={() => {
+          dispatch(signIn());
+        }}
+      >
+        ログインする
+      </button>
     </>
   );
 };
